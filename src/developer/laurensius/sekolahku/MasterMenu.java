@@ -1,15 +1,18 @@
 package developer.laurensius.sekolahku;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
+import android.webkit.WebView;
 
+@SuppressLint("SetJavaScriptEnabled")
 public class MasterMenu extends Activity {
 
+	String uriMasterMenu = getResources().getString(R.string.uri_mastermenu);
+	WebView wv_mastermenu;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -17,30 +20,11 @@ public class MasterMenu extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
-		setContentView(R.layout.activity_splashscreen);
-		Toast.makeText(getApplicationContext(), "Sukses Bray", Toast.LENGTH_SHORT).show();
+		setContentView(R.layout.activity_mastermenu);
+		wv_mastermenu = (WebView)findViewById(R.id.wv_mastermenu);
+		wv_mastermenu.getSettings().setJavaScriptEnabled(true);
+		wv_mastermenu.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		wv_mastermenu.loadUrl(uriMasterMenu);
 	}
 
-	
-	
-	
-	
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.splash_screen, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }
