@@ -33,7 +33,7 @@ public class MasterMenu extends Activity {
 		if(myTracker.canGetLocation()){        	
 			latitude = myTracker.getLatitude();
 		    longitude = myTracker.getLongitude();
-		    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
+		    //Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " + latitude + "\nLong: " + longitude, Toast.LENGTH_LONG).show();	
 		}else{
 			myTracker.showSettingsAlert();
 		}
