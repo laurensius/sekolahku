@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 @SuppressLint("SetJavaScriptEnabled")
 public class MasterMenu extends Activity {

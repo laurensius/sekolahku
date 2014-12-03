@@ -28,6 +28,7 @@ public class SplashScreen extends Activity {
 				} finally {
 					Intent i = new Intent(getApplicationContext(),MasterMenu.class);
 					startActivity(i);
+					finish();
 				}
 			}
 		};
