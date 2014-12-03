@@ -1,6 +1,5 @@
 package developer.laurensius.sekolahku;
 
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
@@ -16,11 +15,11 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class MasterMenu extends Activity {
+public class Tentang extends Activity {
 
-	WebView wv_mastermenu;
+	WebView wv_tentang;
 	GPSTracker myTracker;
-	JavaScriptInterface JSInterface; 
+	JavaScriptInterface JSInterface;
 	Dialog dialogExit;
 	Button btnExitYa, btnExitTidak;
 	
@@ -32,20 +31,20 @@ public class MasterMenu extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
-		setContentView(R.layout.activity_mastermenu);
-		WebView wv_mastermenu = (WebView)findViewById(R.id.wv_mastermenu);
-		wv_mastermenu.getSettings().setJavaScriptEnabled(true);
-		wv_mastermenu.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		wv_mastermenu.setWebViewClient(new WebViewClient() {
+		setContentView(R.layout.activity_tentang);
+		WebView wv_tentang = (WebView)findViewById(R.id.wv_tentang);
+		wv_tentang.getSettings().setJavaScriptEnabled(true);
+		wv_tentang.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		wv_tentang.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
         });
 		JSInterface = new JavaScriptInterface(this);
-		wv_mastermenu.addJavascriptInterface(JSInterface, "JSInterface");
-		String uriMasterMenu = getResources().getString(R.string.uri_mastermenu).toString();
-		wv_mastermenu.loadUrl(uriMasterMenu);
+		wv_tentang.addJavascriptInterface(JSInterface, "JSInterface");
+		String uriTentang = getResources().getString(R.string.uri_tentang).toString();
+		wv_tentang.loadUrl(uriTentang);
 		//---------------------------------------------------------------------------------
-		myTracker = new GPSTracker(MasterMenu.this);
+		myTracker = new GPSTracker(Tentang.this);
 		if(myTracker.canGetLocation()){        	
 			latitude = myTracker.getLatitude();
 		    longitude = myTracker.getLongitude();
@@ -57,7 +56,7 @@ public class MasterMenu extends Activity {
 	
 	@Override
 	public void onBackPressed(){
-		dialogExit = new Dialog(MasterMenu.this);
+		dialogExit = new Dialog(Tentang.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
 		btnExitYa = (Button) dialogExit.findViewById(R.id.btnExitYa);
@@ -79,21 +78,18 @@ public class MasterMenu extends Activity {
 		});
 	}
 	
-	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
 	    Context mContext;
 	    JavaScriptInterface(Context c) {
 	        mContext = c;
 	    }
-	    public void kePencarian(){}
-	    
-	    public void keTentang(){
-	    	Intent iKeTentang = new Intent(getApplicationContext(),Tentang.class);
-	    	startActivity(iKeTentang);
+	    public void kePencarian(){
+	    	Intent iKePencarian = new Intent(getApplicationContext(),MasterMenu.class);
+	    	startActivity(iKePencarian);
 	    	finish();
 	    }
-	    
+	    public void keTentang(){}
 	    public void keLuar(){}
 	}
 

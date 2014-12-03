@@ -28,6 +28,9 @@
         <activity
             android:name=".MasterMenu"
             android:label="@string/app_name" />
+        <activity
+            android:name=".Tentang"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>

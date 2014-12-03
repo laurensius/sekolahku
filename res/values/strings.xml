@@ -6,4 +6,10 @@
     <string name="action_settings">Settings</string>
 
     <string name="uri_mastermenu">file:///android_asset/SekolahKu/public_html/mastermenu.html</string>
+	<string name="uri_tentang">file:///android_asset/SekolahKu/public_html/tentang.html</string>
+    
+	<string name="btnExitTidak">Tidak</string>
+    <string name="btnExitYa">Ya</string>
+    <string name="tvExit">Apakah Anda akan keluar dari aplikasi ?</string>
+    
 </resources>
