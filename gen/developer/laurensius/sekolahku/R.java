@@ -25,26 +25,28 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080009;
-        public static final int btnExitTidak=0x7f080003;
-        public static final int btnExitYa=0x7f080004;
-        public static final int tvExit=0x7f080002;
+        public static final int action_settings=0x7f08000a;
+        public static final int btnExitTidak=0x7f080004;
+        public static final int btnExitYa=0x7f080005;
+        public static final int tvExit=0x7f080003;
         public static final int wv_currentlocation=0x7f080000;
         public static final int wv_detail=0x7f080001;
-        public static final int wv_hasilother=0x7f080005;
-        public static final int wv_mastermenu=0x7f080006;
-        public static final int wv_other=0x7f080007;
-        public static final int wv_tentang=0x7f080008;
+        public static final int wv_detailother=0x7f080002;
+        public static final int wv_hasilother=0x7f080006;
+        public static final int wv_mastermenu=0x7f080007;
+        public static final int wv_other=0x7f080008;
+        public static final int wv_tentang=0x7f080009;
     }
     public static final class layout {
         public static final int activity_currentlocation=0x7f030000;
         public static final int activity_detail=0x7f030001;
-        public static final int activity_dialogexit=0x7f030002;
-        public static final int activity_hasilother=0x7f030003;
-        public static final int activity_mastermenu=0x7f030004;
-        public static final int activity_otherlocation=0x7f030005;
-        public static final int activity_splashscreen=0x7f030006;
-        public static final int activity_tentang=0x7f030007;
+        public static final int activity_detailother=0x7f030002;
+        public static final int activity_dialogexit=0x7f030003;
+        public static final int activity_hasilother=0x7f030004;
+        public static final int activity_mastermenu=0x7f030005;
+        public static final int activity_otherlocation=0x7f030006;
+        public static final int activity_splashscreen=0x7f030007;
+        public static final int activity_tentang=0x7f030008;
     }
     public static final class menu {
         public static final int splash_screen=0x7f070000;
@@ -52,12 +54,13 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
-        public static final int btnExitTidak=0x7f050009;
-        public static final int btnExitYa=0x7f05000a;
+        public static final int btnExitTidak=0x7f05000a;
+        public static final int btnExitYa=0x7f05000b;
         public static final int hello_world=0x7f050001;
-        public static final int tvExit=0x7f05000b;
+        public static final int tvExit=0x7f05000c;
         public static final int uri_currentlocation=0x7f050005;
         public static final int uri_detail=0x7f050008;
+        public static final int uri_detailother=0x7f050009;
         public static final int uri_hasilother=0x7f050007;
         public static final int uri_mastermenu=0x7f050003;
         public static final int uri_other=0x7f050006;

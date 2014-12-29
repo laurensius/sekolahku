@@ -15,13 +15,14 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class HasilOther extends Activity {
+public class DetailOther extends Activity {
 
-	WebView wv_hasilother;
+	WebView wv_detailother;
 	GPSTracker myTracker;
 	JavaScriptInterface JSInterface;
 	Dialog dialogExit;
 	Button btnExitYa, btnExitTidak;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +31,33 @@ public class HasilOther extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
-		setContentView(R.layout.activity_hasilother);
-		WebView wv_hasilother = (WebView)findViewById(R.id.wv_hasilother);
-		wv_hasilother.getSettings().setJavaScriptEnabled(true);
-		wv_hasilother.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		wv_hasilother.setWebViewClient(new WebViewClient() {
+		setContentView(R.layout.activity_detailother);
+		WebView wv_detailother = (WebView)findViewById(R.id.wv_detailother);
+		wv_detailother.getSettings().setJavaScriptEnabled(true);
+		wv_detailother.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		wv_detailother.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
         });
 		JSInterface = new JavaScriptInterface(this);
-		wv_hasilother.addJavascriptInterface(JSInterface, "JSInterface");
-		String uriHasilOther = getResources().getString(R.string.uri_hasilother).toString();
+		wv_detailother.addJavascriptInterface(JSInterface, "JSInterface");
+		String uriDetailOther = getResources().getString(R.string.uri_detailother).toString();
 		//wv_currentlocation.loadUrl(uriCurrentLocation);
 		//---------------------------------------------------------------------------------
-
-		String longitude, latitude;
+		
+		String longitude, latitude, id;
 		Intent i = getIntent();
 		latitude = i.getStringExtra("latitude");
 		longitude = i.getStringExtra("longitude");
-		wv_hasilother.loadUrl(uriHasilOther+"/"+latitude+"/"+longitude);
+		id = i.getStringExtra("id");
+		wv_detailother.loadUrl(uriDetailOther+ "/" + latitude + "/" + longitude + "/" + id);
 		
 		
 	}
 	
 	@Override
 	public void onBackPressed(){
-		dialogExit = new Dialog(HasilOther.this);
+		dialogExit = new Dialog(DetailOther.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
 		btnExitYa = (Button) dialogExit.findViewById(R.id.btnExitYa);
@@ -98,14 +100,7 @@ public class HasilOther extends Activity {
 	    
 	    public void keLuar(){}
 	    
-	    public void keDetailOther(String id,String lat,String lng){
-	    	Intent iKeDetailOther = new Intent(getApplicationContext(),DetailOther.class);
-	    	iKeDetailOther.putExtra("latitude", lat);
-	    	iKeDetailOther.putExtra("longitude", lng);
-	    	iKeDetailOther.putExtra("id", id);
-	    	startActivity(iKeDetailOther);
-	    	finish();
-	    }
+	    
 	}
 
 }

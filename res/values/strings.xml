@@ -11,6 +11,7 @@
     <string name="uri_other">http://192.168.137.1/sekolahku/index.php/mobile/other</string>
     <string name="uri_hasilother">http://192.168.137.1/sekolahku/index.php/mobile/hasilother</string>
     <string name="uri_detail">http://192.168.137.1/sekolahku/index.php/mobile/detail</string>
+    <string name="uri_detailother">http://192.168.137.1/sekolahku/index.php/mobile/detailother</string>
     
 	<string name="btnExitTidak">Tidak</string>
     <string name="btnExitYa">Ya</string>
