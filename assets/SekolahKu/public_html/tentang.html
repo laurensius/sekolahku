@@ -4,43 +4,41 @@
         <title>SekolahKu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="manifest/css/ratchet.css" type="text/css">   
+        <link rel="stylesheet" href="manifest/css/bootstrap.min.css" type="text/css">   
     </head>
     <body>
-        <header class="bar-title">
-            <h1 class="title">SekolahKu</h1>
-        </header>
-        
-        <center>
-            <img src="manifest/img/sch.png" alt="" style="width: 120px;height: 120px;margin: 80px 0px 40px 0px; " />
-        </center>
-        
-        
-        <nav class="bar-tab">
-            <ul class="tab-inner">
-                <li class="tab-item">
-                    <a href="#" onclick="kePencarian()">
-                        <img class="tab-icon" src="manifest/img/search.png">
-                        <div class="tab-label">Pencarian</div>
-                    </a>
-                </li>
-                <li class="tab-item active">
-                    <a href="#">
-                        <img class="tab-icon" src="manifest/img/info.png">
-                        <div class="tab-label">Tentang </div>
-                    </a>
-                </li>
-                <li class="tab-item">
-                    <a href="#"  onclick="keLuar()">
-                        <img class="tab-icon" src="manifest/img/close.png">
-                        <div class="tab-label">Keluar</div>
-                    </a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SekolahKu</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" onclick="kePencarian()">Pencarian</a></li>
+                        <li class="active"><a href="#">Tentang Aplikasi</a></li>
+                        <li><a href="#" onclick="keLuar()">Keluar</a></li>  
+                    </ul>
+                </div>
+            </div>
         </nav>
         
-        <script src="manifest/js/ratchet.js"></script> 
-        <script src="manifest/js/jquery-1.7.2.min.js"></script>  
+        <div class="container-fluid">
+            <center>
+                <img src="manifest/img/sch.png" alt="" style="width: 120px;height: 120px;margin: 80px 0px 40px 0px; " />
+            </center>
+            
+            <div class="col-lg-12">
+                Tentang Aplikasi
+            </div>
+        </div>
+        <script src="manifest/js/jquery-1.7.2.min.js"></script> 
+        <script src="manifest/js/bootstrap.min.js"></script> 
         <script src="manifest/js/laurenslib.js"></script> 
     </body>
 </html>

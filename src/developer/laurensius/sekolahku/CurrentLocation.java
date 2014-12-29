@@ -93,13 +93,26 @@ public class CurrentLocation extends Activity {
 	    JavaScriptInterface(Context c) {
 	        mContext = c;
 	    }
+	    
 	    public void kePencarian(){
 	    	Intent iKePencarian = new Intent(getApplicationContext(),MasterMenu.class);
 	    	startActivity(iKePencarian);
 	    	finish();
 	    }
-	    public void keTentang(){}
+	    
+	    public void keTentang(){
+	    	Intent iKeTentang = new Intent(getApplicationContext(),Tentang.class);
+	    	startActivity(iKeTentang);
+	    	finish();
+	    }
+	    
 	    public void keLuar(){}
+	    
+	    public void keDetail(){
+	    	//Intent iKeTentang = new Intent(getApplicationContext(),Detail.class);
+	    	//startActivity(iKeDetail);
+	    	//finish();
+	    }
 	}
 
 }

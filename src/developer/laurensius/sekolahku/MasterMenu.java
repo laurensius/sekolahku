@@ -95,6 +95,12 @@ public class MasterMenu extends Activity {
 	    }
 	    
 	    public void keLuar(){}
+	    
+	    public void keCurrent(){
+	    	Intent iKeCurrent = new Intent(getApplicationContext(),CurrentLocation.class);
+	    	startActivity(iKeCurrent);
+	    	finish();
+	    }
 	}
 
 }

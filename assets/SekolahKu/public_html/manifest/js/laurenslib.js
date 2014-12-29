@@ -9,3 +9,12 @@ function keTentang(){
 function keLuar(){
     JSInterface.keLuar();
 };
+
+function keCurrent(){
+    JSInterface.keCurrent();
+};
+
+function keOther(){
+    JSInterface.keOther();
+};
+

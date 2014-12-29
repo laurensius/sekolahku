@@ -9,7 +9,7 @@
 	<string name="uri_tentang">file:///android_asset/SekolahKu/public_html/tentang.html</string>
     <string name="uri_currentlocation">http://192.168.137.1/sekolahku/index.php/mobile/current</string>
     <string name="uri_otherlocation">http://192.168.137.1/sekolahku/index.php/mobile/other</string>
-    <string name="uri_detailsekolah">http://192.168.137.1/sekolahku/index.php/mobile/detailsekolah</string>
+    <string name="uri_detailsekolah">http://192.168.137.1/sekolahku/index.php/mobile/detail</string>
     
 	<string name="btnExitTidak">Tidak</string>
     <string name="btnExitYa">Ya</string>
