@@ -1,3 +1,5 @@
+//------------On Mobile-----------------------------------
+
 function kePencarian(){
     JSInterface.kePencarian();
 };
@@ -12,6 +14,7 @@ function keLuar(){
 
 function keCurrent(){
     JSInterface.keCurrent();
+    console.log("Ke Current");
 };
 
 function keOther(){

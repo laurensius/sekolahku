@@ -101,6 +101,10 @@ public class MasterMenu extends Activity {
 	    	startActivity(iKeCurrent);
 	    	finish();
 	    }
+	    
+	    public void keDetail(){
+	    	
+	    }
 	}
 
 }

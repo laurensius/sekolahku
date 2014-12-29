@@ -31,6 +31,12 @@
         <activity
             android:name=".Tentang"
             android:label="@string/app_name" />
+        <activity
+            android:name=".CurrentLocation"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".Detail"
+            android:label="@string/app_name" />
     </application>
 
 </manifest>
