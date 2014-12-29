@@ -102,9 +102,12 @@ public class MasterMenu extends Activity {
 	    	finish();
 	    }
 	    
-	    public void keDetail(){
-	    	
+	    public void keOther(){
+	    	Intent iKeOther = new Intent(getApplicationContext(),OtherLocation.class);
+	    	startActivity(iKeOther);
+	    	finish();
 	    }
+	    
 	}
 
 }

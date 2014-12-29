@@ -15,14 +15,14 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 
 @SuppressLint("SetJavaScriptEnabled")
-public class OtherLocation extends Activity {
+public class HasilOther extends Activity {
 
-	WebView wv_other;
+	WebView wv_hasilother;
 	GPSTracker myTracker;
 	JavaScriptInterface JSInterface;
 	Dialog dialogExit;
 	Button btnExitYa, btnExitTidak;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,24 +30,32 @@ public class OtherLocation extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
-		setContentView(R.layout.activity_otherlocation);
-		WebView wv_other = (WebView)findViewById(R.id.wv_other);
-		wv_other.getSettings().setJavaScriptEnabled(true);
-		wv_other.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-		wv_other.setWebViewClient(new WebViewClient() {
+		setContentView(R.layout.activity_hasilother);
+		WebView wv_hasilother = (WebView)findViewById(R.id.wv_hasilother);
+		wv_hasilother.getSettings().setJavaScriptEnabled(true);
+		wv_hasilother.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+		wv_hasilother.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
         });
 		JSInterface = new JavaScriptInterface(this);
-		wv_other.addJavascriptInterface(JSInterface, "JSInterface");
-		String uriOther = getResources().getString(R.string.uri_other).toString();
-		wv_other.loadUrl(uriOther);
+		wv_hasilother.addJavascriptInterface(JSInterface, "JSInterface");
+		String uriHasilOther = getResources().getString(R.string.uri_hasilother).toString();
+		//wv_currentlocation.loadUrl(uriCurrentLocation);
 		//---------------------------------------------------------------------------------
+
+		String longitude, latitude;
+		Intent i = getIntent();
+		latitude = i.getStringExtra("latitude");
+		longitude = i.getStringExtra("longitude");
+		wv_hasilother.loadUrl(uriHasilOther+"/"+latitude+"/"+longitude);
+		
+		
 	}
 	
 	@Override
 	public void onBackPressed(){
-		dialogExit = new Dialog(OtherLocation.this);
+		dialogExit = new Dialog(HasilOther.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
 		btnExitYa = (Button) dialogExit.findViewById(R.id.btnExitYa);
@@ -75,19 +83,27 @@ public class OtherLocation extends Activity {
 	    JavaScriptInterface(Context c) {
 	        mContext = c;
 	    }
+	    
 	    public void kePencarian(){
 	    	Intent iKePencarian = new Intent(getApplicationContext(),MasterMenu.class);
 	    	startActivity(iKePencarian);
 	    	finish();
 	    }
-	    public void keTentang(){}
+	    
+	    public void keTentang(){
+	    	Intent iKeTentang = new Intent(getApplicationContext(),Tentang.class);
+	    	startActivity(iKeTentang);
+	    	finish();
+	    }
+	    
 	    public void keLuar(){}
 	    
-	    public void keHasilOther(String lat,String lng){
-	    	Intent iKeHasilOther = new Intent(getApplicationContext(),HasilOther.class);
-	    	iKeHasilOther.putExtra("latitude", lat);
-	    	iKeHasilOther.putExtra("longitude", lng);
-	    	startActivity(iKeHasilOther);
+	    public void keDetail(String id,String lat,String lng){
+	    	Intent iKeDetail = new Intent(getApplicationContext(),Detail.class);
+	    	iKeDetail.putExtra("latitude", lat);
+	    	iKeDetail.putExtra("longitude", lng);
+	    	iKeDetail.putExtra("id", id);
+	    	startActivity(iKeDetail);
 	    	finish();
 	    }
 	}
