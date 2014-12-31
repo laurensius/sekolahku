@@ -45,8 +45,7 @@ public class OtherLocation extends Activity {
 		//---------------------------------------------------------------------------------
 	}
 	
-	@Override
-	public void onBackPressed(){
+	public void keluarAplikasi(){
 		dialogExit = new Dialog(OtherLocation.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
@@ -69,6 +68,13 @@ public class OtherLocation extends Activity {
 		});
 	}
 	
+	@Override
+	public void onBackPressed(){
+		Intent i = new Intent(getApplicationContext(),MasterMenu.class);
+		startActivity(i);
+		finish();
+	}
+	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
 	    Context mContext;
@@ -80,15 +86,21 @@ public class OtherLocation extends Activity {
 	    	startActivity(iKePencarian);
 	    	finish();
 	    }
-	    public void keTentang(){}
-	    public void keLuar(){}
+	    public void keTentang(){
+	    	Intent iKeTentang = new Intent(getApplicationContext(),Tentang.class);
+	    	startActivity(iKeTentang);
+	    	finish();
+	    }
+	    
+	    public void keLuar(){
+	    	keluarAplikasi();
+	    }
 	    
 	    public void keHasilOther(String lat,String lng){
 	    	Intent iKeHasilOther = new Intent(getApplicationContext(),HasilOther.class);
 	    	iKeHasilOther.putExtra("latitude", lat);
 	    	iKeHasilOther.putExtra("longitude", lng);
 	    	startActivity(iKeHasilOther);
-	    	finish();
 	    }
 	}
 

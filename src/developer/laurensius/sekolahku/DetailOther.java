@@ -55,8 +55,7 @@ public class DetailOther extends Activity {
 		
 	}
 	
-	@Override
-	public void onBackPressed(){
+	public void keluarAplikasi(){
 		dialogExit = new Dialog(DetailOther.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
@@ -79,6 +78,11 @@ public class DetailOther extends Activity {
 		});
 	}
 	
+	@Override
+	public void onBackPressed(){
+		finish();
+	}
+	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
 	    Context mContext;
@@ -98,9 +102,8 @@ public class DetailOther extends Activity {
 	    	finish();
 	    }
 	    
-	    public void keLuar(){}
-	    
-	    
+	    public void keLuar(){
+	    	keluarAplikasi();
+	    }
 	}
-
 }

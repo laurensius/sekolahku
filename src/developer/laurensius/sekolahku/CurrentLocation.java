@@ -52,19 +52,14 @@ public class CurrentLocation extends Activity {
 		}else{
 			myTracker.showSettingsAlert();
 		}
-		
 		if(latitude == 0 || longitude == 0){
 			latitude  = -6.976000 ;
 			longitude = 108.485831;
 		}
-		
 		wv_currentlocation.loadUrl(uriCurrentLocation+"/"+latitude+"/"+longitude);
-		
-		
 	}
 	
-	@Override
-	public void onBackPressed(){
+	public void keluarAplikasi(){
 		dialogExit = new Dialog(CurrentLocation.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
@@ -87,6 +82,13 @@ public class CurrentLocation extends Activity {
 		});
 	}
 	
+	@Override
+	public void onBackPressed(){
+		Intent i = new Intent(getApplicationContext(),MasterMenu.class);
+		startActivity(i);
+		finish();
+	}
+	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
 	    Context mContext;
@@ -106,7 +108,9 @@ public class CurrentLocation extends Activity {
 	    	finish();
 	    }
 	    
-	    public void keLuar(){}
+	    public void keLuar(){
+	    	keluarAplikasi();
+	    }
 	    
 	    public void keDetail(String id,String lat,String lng){
 	    	Intent iKeDetail = new Intent(getApplicationContext(),Detail.class);
@@ -114,7 +118,6 @@ public class CurrentLocation extends Activity {
 	    	iKeDetail.putExtra("longitude", lng);
 	    	iKeDetail.putExtra("id", id);
 	    	startActivity(iKeDetail);
-	    	finish();
 	    }
 	}
 

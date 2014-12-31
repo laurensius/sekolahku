@@ -53,8 +53,7 @@ public class HasilOther extends Activity {
 		
 	}
 	
-	@Override
-	public void onBackPressed(){
+	public void keluarAplikasi(){
 		dialogExit = new Dialog(HasilOther.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
@@ -77,6 +76,11 @@ public class HasilOther extends Activity {
 		});
 	}
 	
+	@Override
+	public void onBackPressed(){
+		finish();
+	}
+	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
 	    Context mContext;
@@ -96,7 +100,9 @@ public class HasilOther extends Activity {
 	    	finish();
 	    }
 	    
-	    public void keLuar(){}
+	    public void keLuar(){
+	    	keluarAplikasi();
+	    }
 	    
 	    public void keDetailOther(String id,String lat,String lng){
 	    	Intent iKeDetailOther = new Intent(getApplicationContext(),DetailOther.class);
@@ -104,7 +110,6 @@ public class HasilOther extends Activity {
 	    	iKeDetailOther.putExtra("longitude", lng);
 	    	iKeDetailOther.putExtra("id", id);
 	    	startActivity(iKeDetailOther);
-	    	finish();
 	    }
 	}
 

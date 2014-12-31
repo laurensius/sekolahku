@@ -21,3 +21,12 @@ function keOther(){
     JSInterface.keOther();
 };
 
+function kePencarianNama(){
+    JSInterface.kePencarianNama();
+}
+
+function keHasilCariNama(){
+//    alert(document.getElementById('nama_sekolah').value);
+    JSInterface.keHasilCariNama(document.getElementById('nama_sekolah').value);
+}
+

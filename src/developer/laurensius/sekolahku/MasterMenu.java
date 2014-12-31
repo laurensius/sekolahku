@@ -55,8 +55,7 @@ public class MasterMenu extends Activity {
 		}
 	}
 	
-	@Override
-	public void onBackPressed(){
+	public void keluarAplikasi(){
 		dialogExit = new Dialog(MasterMenu.this);
 		dialogExit.setContentView(R.layout.activity_dialogexit);
 		dialogExit.setTitle("Konfirmasi Keluar");
@@ -79,6 +78,11 @@ public class MasterMenu extends Activity {
 		});
 	}
 	
+	@Override
+	public void onBackPressed(){
+		keluarAplikasi();
+	}
+	
 	
 	//-----------------------JS Interface------------------------------------
 	public class JavaScriptInterface {
@@ -86,6 +90,7 @@ public class MasterMenu extends Activity {
 	    JavaScriptInterface(Context c) {
 	        mContext = c;
 	    }
+	    
 	    public void kePencarian(){}
 	    
 	    public void keTentang(){
@@ -94,7 +99,9 @@ public class MasterMenu extends Activity {
 	    	finish();
 	    }
 	    
-	    public void keLuar(){}
+	    public void keLuar(){
+	    	keluarAplikasi();
+	    }
 	    
 	    public void keCurrent(){
 	    	Intent iKeCurrent = new Intent(getApplicationContext(),CurrentLocation.class);
@@ -105,6 +112,12 @@ public class MasterMenu extends Activity {
 	    public void keOther(){
 	    	Intent iKeOther = new Intent(getApplicationContext(),OtherLocation.class);
 	    	startActivity(iKeOther);
+	    	finish();
+	    }
+	    
+	    public void kePencarianNama(){
+	    	Intent iKePencarianNama = new Intent(getApplicationContext(),PencarianNama.class);
+	    	startActivity(iKePencarianNama);
 	    	finish();
 	    }
 	    
