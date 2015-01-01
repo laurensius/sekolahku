@@ -32,12 +32,14 @@ public class CurrentLocation extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
 		setContentView(R.layout.activity_currentlocation);
-		WebView wv_currentlocation = (WebView)findViewById(R.id.wv_currentlocation);
+		wv_currentlocation = (WebView)findViewById(R.id.wv_currentlocation);
 		wv_currentlocation.getSettings().setJavaScriptEnabled(true);
 		wv_currentlocation.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		wv_currentlocation.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            	wv_currentlocation.loadUrl(getResources().getString(R.string.uri_onerror).toString());
+            }
         });
 		JSInterface = new JavaScriptInterface(this);
 		wv_currentlocation.addJavascriptInterface(JSInterface, "JSInterface");

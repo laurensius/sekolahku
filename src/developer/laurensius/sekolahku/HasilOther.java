@@ -31,12 +31,14 @@ public class HasilOther extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
 		setContentView(R.layout.activity_hasilother);
-		WebView wv_hasilother = (WebView)findViewById(R.id.wv_hasilother);
+		wv_hasilother = (WebView)findViewById(R.id.wv_hasilother);
 		wv_hasilother.getSettings().setJavaScriptEnabled(true);
 		wv_hasilother.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		wv_hasilother.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            	wv_hasilother.loadUrl(getResources().getString(R.string.uri_onerror).toString());
+            }
         });
 		JSInterface = new JavaScriptInterface(this);
 		wv_hasilother.addJavascriptInterface(JSInterface, "JSInterface");

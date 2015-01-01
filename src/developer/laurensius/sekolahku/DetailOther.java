@@ -32,12 +32,14 @@ public class DetailOther extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
 		setContentView(R.layout.activity_detailother);
-		WebView wv_detailother = (WebView)findViewById(R.id.wv_detailother);
+		wv_detailother = (WebView)findViewById(R.id.wv_detailother);
 		wv_detailother.getSettings().setJavaScriptEnabled(true);
 		wv_detailother.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		wv_detailother.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            	wv_detailother.loadUrl(getResources().getString(R.string.uri_onerror).toString());
+            }
         });
 		JSInterface = new JavaScriptInterface(this);
 		wv_detailother.addJavascriptInterface(JSInterface, "JSInterface");
