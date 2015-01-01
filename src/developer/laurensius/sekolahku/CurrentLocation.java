@@ -96,6 +96,7 @@ public class CurrentLocation extends Activity {
 	        mContext = c;
 	    }
 	    
+	   
 	    public void kePencarian(){
 	    	Intent iKePencarian = new Intent(getApplicationContext(),MasterMenu.class);
 	    	startActivity(iKePencarian);

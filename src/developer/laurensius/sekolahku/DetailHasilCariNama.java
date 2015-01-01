@@ -37,7 +37,9 @@ public class DetailHasilCariNama extends Activity {
 		wv_detailhasilcarinama.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		wv_detailhasilcarinama.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            	
+            }
         });
 		JSInterface = new JavaScriptInterface(this);
 		wv_detailhasilcarinama.addJavascriptInterface(JSInterface, "JSInterface");

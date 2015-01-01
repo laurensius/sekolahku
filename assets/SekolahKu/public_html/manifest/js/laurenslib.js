@@ -30,3 +30,4 @@ function keHasilCariNama(){
     JSInterface.keHasilCariNama(document.getElementById('nama_sekolah').value);
 }
 
+

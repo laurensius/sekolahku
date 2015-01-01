@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SekolahKu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="manifest/css/bootstrap.min.css" type="text/css">   
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">SekolahKu</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" onclick="kePencarian()">Pencarian</a></li>
+                        <li class="active"><a href="#">Tentang Aplikasi</a></li>
+                        <li><a href="#" onclick="keLuar()">Keluar</a></li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid">
+            <center>
+                <img src="manifest/img/error.png" alt="" style="width: 120px;height: 120px;margin: 80px 0px 40px 0px; " />
+            </center>
+            
+            <div class="col-lg-12">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <div class="panel-title">Error</div>
+                    </div>
+                    <div class="panel-body">
+                        <center>
+                            <b>Error ! </b> <br/>
+                            Klik tombol <i>Kembali (<img src="manifest/img/undo.png" style="height:16px;width:16px;">)  </i> pada perangkat Anda untuk kembali ke menu sebelumnya. Terima kasih.
+                        </center>
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="manifest/js/jquery-1.7.2.min.js"></script> 
+        <script src="manifest/js/bootstrap.min.js"></script> 
+        <script src="manifest/js/laurenslib.js"></script> 
+    </body>
+</html>

@@ -32,12 +32,14 @@ public class HasilCariNama extends Activity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		/*--------------------End of Menghilangkan Title Bar------------------------------*/
 		setContentView(R.layout.activity_hasilcarinama);
-		WebView wv_hasilcarinama = (WebView)findViewById(R.id.wv_hasilcarinama);
+		wv_hasilcarinama = (WebView)findViewById(R.id.wv_hasilcarinama);
 		wv_hasilcarinama.getSettings().setJavaScriptEnabled(true);
 		wv_hasilcarinama.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 		wv_hasilcarinama.setWebViewClient(new WebViewClient() {
 			public void onPageFinished(WebView view, String url){}
-            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){}
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+            	wv_hasilcarinama.loadUrl(getResources().getString(R.string.uri_onerror).toString());
+            }
         });
 		JSInterface = new JavaScriptInterface(this);
 		wv_hasilcarinama.addJavascriptInterface(JSInterface, "JSInterface");
