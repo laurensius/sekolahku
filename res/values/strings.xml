@@ -6,19 +6,18 @@
     <string name="action_settings">Settings</string>
 
     <string name="uri_onerror">file:///android_asset/SekolahKu/public_html/onerror.html</string>
-    
     <string name="uri_splashscreen">file:///android_asset/SekolahKu/public_html/splashscreen.html</string>
 	<string name="uri_mastermenu">file:///android_asset/SekolahKu/public_html/mastermenu.html</string>
 	<string name="uri_tentang">file:///android_asset/SekolahKu/public_html/tentang.html</string>
     <string name="uri_pencariannama">file:///android_asset/SekolahKu/public_html/pencariannama.html</string>
     
-    <string name="uri_currentlocation">http://192.168.43.131/sekolahku/index.php/mobile/current</string>
-    <string name="uri_other">http://192.168.43.131/sekolahku/index.php/mobile/other</string>
-    <string name="uri_hasilother">http://192.168.43.131/sekolahku/index.php/mobile/hasilother</string>
-    <string name="uri_detail">http://192.168.43.131/sekolahku/index.php/mobile/detail</string>
-    <string name="uri_detailother">http://192.168.43.131/sekolahku/index.php/mobile/detailother</string>
-    <string name="uri_hasilcarinama">http://192.168.43.131/sekolahku/index.php/mobile/hasilcarinama</string>
-    <string name="uri_detailhasilcarinama">http://192.168.43.131/sekolahku/index.php/mobile/detailhasilcarinama</string>
+    <string name="uri_currentlocation">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/current</string>
+    <string name="uri_other">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/other</string>
+    <string name="uri_hasilother">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/hasilother</string>
+    <string name="uri_detail">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/detail</string>
+    <string name="uri_detailother">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/detailother</string>
+    <string name="uri_hasilcarinama">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/hasilcarinama</string>
+    <string name="uri_detailhasilcarinama">http://sekolahku.laurensius.3gen-itdev.com/index.php/mobile/detailhasilcarinama</string>
     
 	<string name="btnExitTidak">Tidak</string>
     <string name="btnExitYa">Ya</string>
